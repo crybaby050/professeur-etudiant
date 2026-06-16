@@ -19,4 +19,12 @@ public class Etudiant extends Personne{
         System.out.println("Matricule : "+ matricule);
         System.out.println("Filiere : "+ filiere);
     }
+
+    public String getMatricule(){
+        return matricule;
+    }
+
+    public String getFiliere(){
+        return filiere;
+    }
 }
