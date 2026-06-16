@@ -16,7 +16,7 @@ public class ProfesseurService {
         if(nbreProf == 0){
             System.out.println("Aucun professeur enregistrer");
         }else{
-            System.out.println("===============LISTE DES ETUDIANTS=============");
+            System.out.println("===============LISTE DES PROFESSEURS=============");
             for (int i = 0; i < nbreProf ; i++){
                 professeurs[i].afficherInfo();
             }
