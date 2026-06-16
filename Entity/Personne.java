@@ -14,4 +14,10 @@ public class Personne {
         this.email = email;
     }
 
+    public void afficherInfo(){
+        System.out.println("Nom : " + nom);
+        System.out.println("Prenom : " + prenom);
+        System.out.println("Email : " + email);
+    }
+
 }
