@@ -27,4 +27,12 @@ public class Etudiant extends Personne{
     public String getFiliere(){
         return filiere;
     }
+
+    public void setMatricule(String matricule){
+        this.matricule = matricule;
+    }
+
+    public void setFiliere(String filiere){
+        this.filiere = filiere;
+    }
 }
