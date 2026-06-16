@@ -18,7 +18,9 @@ public class ProfesseurService {
         }else{
             System.out.println("===============LISTE DES PROFESSEURS=============");
             for (int i = 0; i < nbreProf ; i++){
+                System.out.println("-----------------------------------------------");
                 professeurs[i].afficherInfo();
+                System.out.println("-----------------------------------------------");
             }
             System.out.println("===============FIN DE LISTE=============");
         }

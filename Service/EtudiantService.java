@@ -19,7 +19,9 @@ public class EtudiantService {
         }else{
             System.out.println("===============LISTE DES ETUDIANTS=============");
             for (int i = 0; i < nbreEtudiant ; i++){
+                System.out.println("-----------------------------------------------");
                 etudiants[i].afficherInfo();
+                System.out.println("-----------------------------------------------");
             }
             System.out.println("===============FIN DE LISTE=============");
         }

@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
 import Service.EtudiantService;
+import Service.ProfesseurService;
 import View.EtudiantView;
+import View.ProfesseurView;
 
 public class Main {
     
@@ -10,7 +12,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         EtudiantService etudiantService = new EtudiantService();
+        ProfesseurService professeurService = new ProfesseurService();
         EtudiantView etudiantView = new EtudiantView(etudiantService);
+        ProfesseurView professeurView = new ProfesseurView(professeurService);
 
         int choix;
 
@@ -30,11 +34,19 @@ public class Main {
                 case 2:
                     etudiantView.listerEtudiant();
                     break;
-            
-                default:
+                case 3:
+                    professeurView.ajouterProfesseur();
+                    break;
+                case 4:
+                    professeurView.listerProfesseur();
+                    break;
+                case 5:
                     System.out.println("AU REVOIR LES GARS !!!");
                     break;
+
+                default:
+                    System.out.println("Choix invalide !");
             }
-        }while(choix != 3);
+        }while(choix != 5);
     }
 }
