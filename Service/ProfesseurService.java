@@ -7,7 +7,7 @@ public class ProfesseurService {
     private Professeur[] professeurs = new Professeur[100];
     private int nbreProf = 0;
 
-    public void ajouterEtudiant(Professeur professeur){
+    public void ajouterProfesseur(Professeur professeur){
         professeurs[nbreProf] = professeur;
         nbreProf++;
     }
