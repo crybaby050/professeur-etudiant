@@ -3,19 +3,13 @@ package View;
 import java.util.Scanner;
 
 import Entity.Etudiant;
-import Service.EtudiantService;
 
 public class EtudiantView {
     
-    private EtudiantService etudiantService;
-
     public Scanner sc = new Scanner(System.in);
 
-    public EtudiantView(EtudiantService etudiantService){
-        this.etudiantService = etudiantService;
-    }
 
-    public void ajouterEtudiant(){
+    public Etudiant saisieEtudiant(){
         System.out.println("Entrer le nom de l'etudiant");
         String nom = sc.nextLine();
         System.out.println("Entrer le prenom de l'etudiant");
@@ -29,11 +23,20 @@ public class EtudiantView {
 
         Etudiant etudiant = new Etudiant(nom, prenom, email, matricule, filiere);
 
-        etudiantService.ajouterEtudiant(etudiant);
-
+        return etudiant;
     }
 
-    public void listerEtudiant(){
-        etudiantService.listerEtudiant();
+    public void listerEtudiant(Etudiant[] etudiants , int nbreEtudiant){
+        if(nbreEtudiant == 0){
+            System.out.println("Aucun etudiant enregistrer");
+        }else{
+            System.out.println("===============LISTE DES ETUDIANTS=============");
+            for (int i = 0; i < nbreEtudiant ; i++){
+                System.out.println("-----------------------------------------------");
+                etudiants[i].afficherInfo();
+                System.out.println("-----------------------------------------------");
+            }
+            System.out.println("===============FIN DE LISTE=============");
+        }
     }
 }

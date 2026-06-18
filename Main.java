@@ -5,6 +5,9 @@ import Service.ProfesseurService;
 import View.EtudiantView;
 import View.ProfesseurView;
 
+import Entity.Etudiant;
+import Entity.Professeur;
+
 public class Main {
     
     public static void main(String[] args) {
@@ -13,8 +16,8 @@ public class Main {
 
         EtudiantService etudiantService = new EtudiantService();
         ProfesseurService professeurService = new ProfesseurService();
-        EtudiantView etudiantView = new EtudiantView(etudiantService);
-        ProfesseurView professeurView = new ProfesseurView(professeurService);
+        EtudiantView etudiantView = new EtudiantView();
+        ProfesseurView professeurView = new ProfesseurView();
 
         int choix;
 
@@ -29,16 +32,22 @@ public class Main {
 
             switch (choix) {
                 case 1:
-                    etudiantView.ajouterEtudiant();
+                    Etudiant e1 = etudiantView.saisieEtudiant();
+                    etudiantService.ajouterEtudiant(e1);
                     break;
                 case 2:
-                    etudiantView.listerEtudiant();
+                    Etudiant[] etudiants = etudiantService.getEtudiants();
+                    int nbreEtudiant = etudiantService.getNbreEtudiant();
+                    etudiantView.listerEtudiant(etudiants, nbreEtudiant);
                     break;
                 case 3:
-                    professeurView.ajouterProfesseur();
+                    Professeur p1 = professeurView.saisieProfesseur();
+                    professeurService.ajouterProfesseur(p1);
                     break;
                 case 4:
-                    professeurView.listerProfesseur();
+                    Professeur[] profs = professeurService.getProfesseurs();
+                    int nbreProf = professeurService.getNbreProf();
+                    professeurView.listerProfesseur(profs, nbreProf);
                     break;
                 case 5:
                     System.out.println("AU REVOIR LES GARS !!!");
@@ -48,5 +57,6 @@ public class Main {
                     System.out.println("Choix invalide !");
             }
         }while(choix != 5);
+        sc.close();
     }
 }

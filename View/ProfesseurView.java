@@ -3,18 +3,13 @@ package View;
 import java.util.Scanner;
 
 import Entity.Professeur;
-import Service.ProfesseurService;
 
 public class ProfesseurView {
     
-    private ProfesseurService professeurService;
     public Scanner sc = new Scanner(System.in);
 
-    public ProfesseurView(ProfesseurService professeurService){
-        this.professeurService = professeurService;
-    }
 
-    public void ajouterProfesseur(){ 
+    public Professeur saisieProfesseur(){ 
         System.out.println("Entrer le nom du professeur");
         String nom = sc.nextLine();
         System.out.println("Entrer le prenom du professeur");
@@ -28,11 +23,22 @@ public class ProfesseurView {
 
         Professeur professeur = new Professeur(nom, prenom, email, grade, specialite);
 
-        professeurService.ajouterProfesseur(professeur);
+        return professeur;
 
     }
 
-    public void listerProfesseur(){
-        professeurService.listerProfesseur();
+    public void listerProfesseur(Professeur[] prof, int nbreProf){
+        if(nbreProf == 0){
+            System.out.println("Tableau est vide mon pote !!!");
+            return;
+        }
+        System.out.println("===============LISTE DES ETUDIANTS=============");
+            for (int i = 0; i < nbreProf ; i++){
+                System.out.println("-----------------------------------------------");
+                prof[i].afficherInfo();
+                System.out.println("-----------------------------------------------");
+            }
+            System.out.println("===============FIN DE LISTE=============");
+        
     }
 }

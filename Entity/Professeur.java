@@ -13,9 +13,7 @@ public class Professeur extends Personne{
     
     @Override
     public void afficherInfo(){
-        System.out.println("Nom : " + getNom());
-        System.out.println("Prenom : " + getPrenom());
-        System.out.println("Email : " + getEmail());
+        super.afficherInfo();
         System.out.println("Matricule : "+ grade);
         System.out.println("Filiere : "+ specialite);
     }

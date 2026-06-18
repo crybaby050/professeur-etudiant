@@ -13,17 +13,11 @@ public class EtudiantService {
         nbreEtudiant++;
     }
 
-    public void listerEtudiant(){
-        if(nbreEtudiant == 0){
-            System.out.println("Aucun etudiant enregistrer");
-        }else{
-            System.out.println("===============LISTE DES ETUDIANTS=============");
-            for (int i = 0; i < nbreEtudiant ; i++){
-                System.out.println("-----------------------------------------------");
-                etudiants[i].afficherInfo();
-                System.out.println("-----------------------------------------------");
-            }
-            System.out.println("===============FIN DE LISTE=============");
-        }
+    public Etudiant[] getEtudiants() {
+        return this.etudiants;
+    }
+
+    public int getNbreEtudiant() {
+        return nbreEtudiant;
     }
 }
